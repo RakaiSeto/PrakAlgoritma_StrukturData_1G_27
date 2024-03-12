@@ -1,23 +1,26 @@
 package P3.ArrayObjects;
 
+import java.util.Scanner;
+
 public class ArrayObjects {
     public static void main(String[] args) {
         PersegiPanjang[] ppArray = new PersegiPanjang[3];
 
-        ppArray[0] = new PersegiPanjang();
-        ppArray[0].panjang = 110;
-        ppArray[0].lebar = 30;
+        Scanner rakai26 = new Scanner(System.in);
 
-        ppArray[1] = new PersegiPanjang();
-        ppArray[1].panjang = 80;
-        ppArray[1].lebar = 40;
+//        ganti dengan menerima input menggunakan for loop untuk panjang dan lebar
+        for (int i = 0; i < ppArray.length; i++) {
+            ppArray[i] = new PersegiPanjang();
+            System.out.println("Persegi Panjang ke-" + i);
+            System.out.print("Masukkan panjang: ");
+            ppArray[i].panjang = rakai26.nextInt();
+            System.out.print("Masukkan lebar: ");
+            ppArray[i].lebar = rakai26.nextInt();
+        }
 
-        ppArray[2] = new PersegiPanjang();
-        ppArray[2].panjang = 100;
-        ppArray[2].lebar = 20;
-
-        System.out.println("Persegi Panjang ke-0, panjang: " + ppArray[0].panjang + ", lebar: " + ppArray[0].lebar);
-        System.out.println("Persegi Panjang ke-1, panjang: " + ppArray[1].panjang + ", lebar: " + ppArray[1].lebar);
-        System.out.println("Persegi Panjang ke-2, panjang: " + ppArray[2].panjang + ", lebar: " + ppArray[2].lebar);
+//        tampilkan masing2 lebar dan panjang menggunakan for loop
+        for (int i = 0; i < ppArray.length; i++) {
+            System.out.println("Persegi Panjang ke-" + i + ", panjang: " + ppArray[i].panjang + ", lebar: " + ppArray[i].lebar);
+        }
     }
 }
