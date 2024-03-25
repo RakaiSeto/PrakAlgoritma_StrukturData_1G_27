@@ -10,11 +10,11 @@ public class MainPangkat {
 
         Pangkat[] pk = new Pangkat[iJml];
         for (int i = 0; i < iJml; i++) {
-            pk[i] = new Pangkat();
             System.out.println("Masukkan nilai elemen ke-" + (i+1) + ": ");
-            pk[i].nilai = sc26.nextInt();
+            int nilai = sc26.nextInt();
             System.out.println("Masukkan pangkat elemen ke-" + (i+1) + ": ");
-            pk[i].pangkat = sc26.nextInt();
+            int pangkat = sc26.nextInt();
+            pk[i] = new Pangkat(nilai, pangkat);
         }
 
         System.out.println("Hasil Pangkat dengan Brute Force");
