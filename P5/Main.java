@@ -21,5 +21,9 @@ public class Main {
         System.out.println("Data Mahasiswa setelah sorting desc berdasarkan IPK: ");
         list.BubbleSort();
         list.Tampil();
+
+        System.out.println("Data Mahasiswa setelah sorting asc berdasarkan IPK: ");
+        list.SelectionSort();
+        list.Tampil();
     }
 }
