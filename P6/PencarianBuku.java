@@ -4,6 +4,15 @@ public class PencarianBuku {
     Buku listBuku[] = new Buku[5];
     int idx;
 
+    public Buku findBuku(int cari) {
+        for (int i = 0; i < listBuku.length; i++) {
+            if (listBuku[i].kodeBuku == cari) {
+                return listBuku[i];
+            }
+        }
+        return null;
+    }
+
     void tambah(Buku b) {
         if (idx < listBuku.length) {
             listBuku[idx] = b;
