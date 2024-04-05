@@ -37,6 +37,21 @@ public class PencarianBuku {
         return -1;
     }
 
+    public int FindBinarySearch(int cari, int left, int right) {
+        int mid;
+        if (right >= left) {
+            mid = (left + right) / 2;
+            if (listBuku[mid].kodeBuku == cari) {
+                return (mid);
+            } else if (listBuku[mid].kodeBuku > cari) {
+                return FindBinarySearch(cari, left, mid - 1);
+            } else {
+                return FindBinarySearch(cari, mid + 1, right);
+            }
+        }
+        return -1;
+    }
+
     public void TampilPosisi(int x, int pos) {
         if (pos != 1) {
             System.out.println("data : " + x + " ditemukan pada posisi : " + pos);
