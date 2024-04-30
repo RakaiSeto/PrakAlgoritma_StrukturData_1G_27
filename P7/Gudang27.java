@@ -29,8 +29,9 @@ public class Gudang27 {
 
     Barang27 ambilBarang() {
         if (!cekKosong()) {
-            System.out.println("Barang " + listBarang[top].nama + " berhasil diambil dari gudang!");
             Barang27 delete = listBarang[top];
+            System.out.println("Barang " + delete.nama + " berhasil diambil dari gudang!");
+            System.out.println("Kode unik dalam biner: " + konversiDesimalKeBiner(delete.kode));
             top--;
             return delete;
         } else {
@@ -60,5 +61,19 @@ public class Gudang27 {
         } else {
             System.out.println("Data kosong!");
         }
+    }
+
+    public String konversiDesimalKeBiner(int desimal) {
+        StackKonversi stack = new StackKonversi();
+        while (desimal > 0) {
+            int sisa = desimal % 2;
+            stack.push(sisa);
+            desimal = desimal / 2;
+        }
+        String biner = new String();
+        while (!stack.isEmpty()) {
+            biner += stack.pop();
+        }
+        return biner;
     }
 }
