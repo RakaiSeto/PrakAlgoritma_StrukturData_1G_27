@@ -11,7 +11,7 @@ public class Gudang27 {
     }
 
     boolean cekKosong() {
-        return this.top != -1;
+        return this.top == -1;
     }
 
     boolean cekPenuh() {
