@@ -49,6 +49,14 @@ public class Queue26 {
         }
     }
 
+    void peekBelakang() {
+        if (!isEmpty()) {
+            System.out.println("Elemen terbelakang: " + this.data[this.rear].norek + " " + this.data[this.rear].nama + " " + this.data[this.rear].alamat + " " + this.data[this.rear].saldo);
+        } else {
+            System.out.println("Data kosong!");
+        }
+    }
+
     void print() {
         if (!isEmpty()) {
             int i = this.front;

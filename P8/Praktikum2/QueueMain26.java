@@ -33,7 +33,7 @@ public class QueueMain26 {
                     break;
                 case 2:
                     Nasabah26 dataKeluar = antri.dequeue();
-                    if(!"".equals(dataKeluar.norek) && !"".equals(dataKeluar.nama) && !"".equals(dataKeluar.alamat) && dataKeluar.umur != 0 && dataKeluar.saldo != 0) {
+                    if (!"".equals(dataKeluar.norek) && !"".equals(dataKeluar.nama) && !"".equals(dataKeluar.alamat) && dataKeluar.umur != 0 && dataKeluar.saldo != 0) {
                         System.out.println("Data yang dikeluarkan: " + dataKeluar.norek + " " + dataKeluar.nama + " " + dataKeluar.alamat + " " + dataKeluar.saldo);
                         break;
                     }
@@ -43,8 +43,11 @@ public class QueueMain26 {
                 case 4:
                     antri.print();
                     break;
+                case 5:
+                    antri.peekBelakang();
+                    break;
             }
-        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4);
+        } while (pilih == 1 || pilih == 2 || pilih == 3 || pilih == 4 || pilih == 5);
     }
 
     public static void menu() {
@@ -53,6 +56,7 @@ public class QueueMain26 {
         System.out.println("2. Antrian keluar");
         System.out.println("3. Cek antrian terdepan");
         System.out.println("4. Cek semua antrian");
+        System.out.println("5. Cek antrian terbelakang");
         System.out.println("------------------");
     }
 }
