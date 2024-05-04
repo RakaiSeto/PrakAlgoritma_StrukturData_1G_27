@@ -1,14 +1,14 @@
-package P8;
+package P8.Praktikum2;
 
 public class Queue26 {
-    int[] data;
+    Nasabah26[] data;
     int front, rear, size, max;
 
     public Queue26(int n) {
         this.max = n;
         this.size = 0;
         this.front = this.rear = -1;
-        this.data = new int[n];
+        this.data = new Nasabah26[n];
     }
 
     boolean isFull() {
@@ -19,7 +19,7 @@ public class Queue26 {
         return this.size == 0;
     }
 
-    void enqueue(int x) {
+    void enqueue(Nasabah26 x) {
         if (!isFull()) {
             this.rear = (this.rear + 1) % this.max;
             this.data[this.rear] = x;
@@ -29,21 +29,21 @@ public class Queue26 {
         }
     }
 
-    int dequeue() {
+    Nasabah26 dequeue() {
+        Nasabah26 x = new Nasabah26();
         if (!isEmpty()) {
-            int x = this.data[this.front];
+            x = this.data[this.front];
             this.front = (this.front + 1) % this.max;
             this.size--;
-            return x;
         } else {
             System.out.println("Data kosong!");
-            return -1;
         }
+        return x;
     }
 
     void peek() {
         if (!isEmpty()) {
-            System.out.println("Elemen terdepan: " + this.data[this.front]);
+            System.out.println("Elemen terdepan: " + this.data[this.front].norek + " " + this.data[this.front].nama + " " + this.data[this.front].alamat + " " + this.data[this.front].saldo);
         } else {
             System.out.println("Data kosong!");
         }
@@ -53,10 +53,11 @@ public class Queue26 {
         if (!isEmpty()) {
             int i = this.front;
             while (i != this.rear) {
-                System.out.print(this.data[i] + " ");
+                System.out.println(this.data[i].norek + " " + this.data[i].nama + " " + this.data[i].alamat + " " + this.data[i].saldo);
                 i = (i + 1) % this.max;
             }
-            System.out.println(this.data[this.rear]);
+            System.out.println(this.data[this.rear].norek + " " + this.data[this.rear].nama + " " + this.data[this.rear].alamat + " " + this.data[this.rear].saldo);
+            System.out.println("Jumlah elemen = " + this.size);
         } else {
             System.out.println("Data kosong!");
         }
