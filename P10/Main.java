@@ -6,23 +6,18 @@ public class Main {
         dll.print();
         System.out.println("Size : "+dll.size());
         System.out.println("=========================");
-        dll.addLast(50);
-        dll.addLast(40);
-        dll.addLast(10);
-        dll.addLast(20);
+        dll.addFirst(3);
+        dll.addLast(4);
+        dll.addFirst(7);
         dll.print();
         System.out.println("Size : "+dll.size());
         System.out.println("=========================");
-        dll.removeFirst();
+        dll.add(40, 1);
         dll.print();
         System.out.println("Size : "+dll.size());
         System.out.println("=========================");
-        dll.removeLast();
-        dll.print();
-        System.out.println("Size : "+dll.size());
-        System.out.println("=========================");
-        dll.remove(1);
-        dll.print();
-        System.out.println("Size : "+dll.size());
+        System.out.println("Data awal pada Linked list : "+dll.getFirst());
+        System.out.println("Data akhir pada Linked list : "+dll.getLast());
+        System.out.println("Data indeks ke 1 pada Linked list : "+dll.get(1));
     }
 }
