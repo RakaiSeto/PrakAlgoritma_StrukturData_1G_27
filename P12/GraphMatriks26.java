@@ -29,5 +29,20 @@ public class GraphMatriks26 {
         }
     }
 
+    public void degree(int asal) {
+        int totalIn = 0, totalOut = 0;
+        for (int i = 0; i < vertex; i++) {
+            if (matriks[i][asal] != 0) {
+                totalIn++;
+            }
+            if (matriks[asal][i] != 0) {
+                totalOut++;
+            }
+        }
+
+        System.out.println("Indegree dari vertex " + (char) ('A' + asal) + " : " + totalIn);
+        System.out.println("Outdegree dari vertex " + (char) ('A' + asal) + " : " + totalOut);
+        System.out.println("Degree dari vertex " + (char) ('A' + asal) + " : " + (totalIn + totalOut));
+    }
 
 }

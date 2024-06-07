@@ -11,6 +11,7 @@ public class MatriksMain26 {
         gdg.makeEdge(2, 3, 40);
         gdg.makeEdge(3, 0, 90);
         gdg.printGraph();
+        gdg.degree(0);
         System.out.println("Hasil setelah penghapusan edge");
         gdg.removeEdge(2, 1);
         gdg.printGraph();
