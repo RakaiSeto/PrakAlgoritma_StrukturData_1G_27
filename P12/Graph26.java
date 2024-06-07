@@ -12,6 +12,16 @@ public class Graph26 {
         }
     }
 
+    public void CheckConn(int asal, int tujuan) {
+        for (int i = 0; i < vertex; i++) {
+            if (i == tujuan) {
+                System.out.println("ada");
+                return;
+            }
+        }
+        System.out.println("tidak ada");
+    }
+
     public void addEdge(int asal, int tujuan, int jarak) {
         list[asal].addLast(tujuan, jarak);
 //        list[tujuan].addLast(asal, jarak);

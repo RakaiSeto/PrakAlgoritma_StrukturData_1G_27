@@ -1,7 +1,11 @@
 package P12;
 
+import java.util.Scanner;
+
 public class Main26 {
     public static void main(String[] args) throws Exception {
+        Scanner sc26 = new Scanner(System.in);
+
         Graph26 gedung = new Graph26(6);
         gedung.addEdge(0, 2, 100);
         gedung.addEdge(0, 1, 50);
@@ -13,5 +17,12 @@ public class Main26 {
         gedung.printGraph();
         gedung.removeEdge(1, 3);
         gedung.printGraph();
+
+        int asal, tujuan;
+        System.out.println("Masukkan gedung asal: ");
+        asal = sc26.nextInt();
+        System.out.println("Masukkan gedung tujuan: ");
+        tujuan = sc26.nextInt();
+        gedung.CheckConn(asal, tujuan);
     }
 }
