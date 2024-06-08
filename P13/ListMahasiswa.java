@@ -48,4 +48,12 @@ public class ListMahasiswa {
         // Jika 'nim' ditemukan, kembalikan indeksnya. Jika tidak, kembalikan -1
         return (index >= 0) ? index : -1;
     }
+
+    void sort() {
+        Collections.sort(mhs, Comparator.comparing(m -> m.nim));
+
+        mhs.stream().forEach(e -> {
+            System.out.println("" + e.toString());
+        });
+    }
 }
