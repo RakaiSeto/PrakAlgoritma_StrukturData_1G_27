@@ -1,8 +1,6 @@
 package P13;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class ListMahasiswa {
     List<Mahasiswa> mhs = new ArrayList<>();
@@ -14,7 +12,7 @@ public class ListMahasiswa {
         Mahasiswa m3 = new Mahasiswa("201236", "Shannum", "021xx3");
         lm.tambah(m1, m2, m3);
         lm.tampil();
-        lm.update(lm.linearSearch("201235"), new Mahasiswa("201235", "Akhleema Lela", "021xx2"));
+        lm.update(lm.binarySearch("201235"), new Mahasiswa("201235", "Akhleema Lela", "021xx2"));
         System.out.println("");
         lm.tampil();
     }
@@ -37,12 +35,17 @@ public class ListMahasiswa {
         });
     }
 
-    int linearSearch(String nim) {
-        for (int i = 0; i < mhs.size(); i++) {
-            if (mhs.get(i).nim.equals(nim)) {
-                return i;
-            }
-        }
-        return -1;
+    int binarySearch(String nim) {
+        // Urutkan list berdasarkan field 'nim'
+        Collections.sort(mhs, Comparator.comparing(m -> m.nim));
+
+        // Buat objek Mahasiswa dengan 'nim' yang dicari
+        Mahasiswa searchKey = new Mahasiswa(nim, null, null);
+
+        // Gunakan binarySearch untuk mencari 'nim' dalam list
+        int index = Collections.binarySearch(mhs, searchKey, Comparator.comparing(m -> m.nim));
+
+        // Jika 'nim' ditemukan, kembalikan indeksnya. Jika tidak, kembalikan -1
+        return (index >= 0) ? index : -1;
     }
 }
