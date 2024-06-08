@@ -1,5 +1,6 @@
 package P13;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.Stack;
 
@@ -37,5 +38,9 @@ public class LoopCollection {
         for (int i = 0; i < fruits.size(); i++) {
             System.out.printf("%s ", fruits.get(i));
         }
+        fruits.push("Strawberry");
+        fruits.push("Mango");
+        fruits.push("Guava");
+        fruits.push("Avocado");
     }
 }
